@@ -30,7 +30,7 @@ Feature: Login for MartianTools
     
     | username | password  |
     | norman   | plainText |
-    |||
+    |	naresh   | password  |
     ||| 
 
   Scenario: Logging into a user account with the wrong credentials
@@ -40,7 +40,28 @@ Feature: Login for MartianTools
     Then the user is redirected back to the current page
     And the sign in option is still there but has some red text saying that the username/password was wrong
     
+    
     | username | password      |
     | norman   | wrongPassword |
-    |||
+    |	naresh   | badInput      |
     ||| 
+   
+   Scenario Outline: Logging into a user accout by verious user
+   		When the suer puts their correct username:<username>
+   		And the user inputs their correct password: <password>
+   		And clicks on the login button
+   		Then the user is redirected to inventory page
+   	Examples: 
+   		 | username | password      |
+    	 | norman   | wrongPassword |
+       |	naresh  | badInput      |
+       ||| 
+    
+  
+  
+  
+  
+  
+  
+  
+  
