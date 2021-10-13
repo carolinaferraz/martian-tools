@@ -1,11 +1,13 @@
 .wrapper {
+  width: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 1rem;
 }
 
 .sidebar {
+  padding-top: 1.5rem;
   min-width: 200px;
   font-size: 1.15rem;
 
@@ -18,7 +20,6 @@ h1 {
 
 p {
   line-height: 1.5;
-  font-size: 1rem;
 }
 
 .content {
@@ -29,39 +30,7 @@ p {
   border-radius: .5rem;
 }
 
-/* Clear floats after the columns */
-.row {
-  flex-wrap: nowrap;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.col-25 {
-border: 1px solid #ccc;
-margin: .5rem;
-padding: .5rem;
-}
-
 img {
   max-width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-
-  }
-  .col-25 {
-    width: 100%;
-    font-size: 1.15rem;
-    padding: 1rem;
-  }
-  .col-25 >img {
-    width: 100%;
-  }
-}

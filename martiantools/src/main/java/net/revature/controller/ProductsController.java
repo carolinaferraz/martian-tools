@@ -35,9 +35,17 @@ public class ProductsController {
 	
 	@GetMapping(path="/all/{catID}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Products>> login(@PathVariable String catID) {
-		return new ResponseEntity<List<Products>>(this.pService.findById(catID), HttpStatus.OK); 
+		return new ResponseEntity<List<Products>>(this.pService.getByCategoryID(catID), HttpStatus.OK); 
 	}
 
-
-	
+	@GetMapping(path="/{product_id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Products> findById(@PathVariable Integer product_id) {
+		
+		
+		Products product = this.pService.findById(product_id);
+		if(product_id!=null) {
+		return new ResponseEntity<Products>(product, HttpStatus.OK);
+	}
+		return null; 
+}
 }

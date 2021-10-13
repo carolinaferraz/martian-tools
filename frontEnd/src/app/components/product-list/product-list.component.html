@@ -1,0 +1,7 @@
+<p>product-list-component.html</p>
+
+<div class="categoryCards">
+  <div *ngFor="let card of cards" id="{{card.category_name}}">
+      <a routerLink="/products/all/{{card.category_id}}">{{card.category_name}}</a>
+  </div>
+</div>

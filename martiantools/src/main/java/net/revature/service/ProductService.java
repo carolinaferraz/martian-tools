@@ -17,17 +17,22 @@ public class ProductService {
 	@Autowired
 	public ProductService(ProductRepository productRepository) {
 		this.productRepository = productRepository;
-		System.out.println("hello from productService!");
 	}
 	
 	public List<Products> findAll(){
 		return this.productRepository.getAll();
 	}
 	
-	public List<Products> findById(String id){
+	public List<Products> getByCategoryID(String id){
 		if(!CheckWrongData.canParseAsInteger(id)) {
 			return null;
 		}
 		return this.productRepository.getByCategoryID(id);
 	}
+	
+	public Products findById(Integer product_id) {
+		
+		return this.productRepository.findById(product_id);
+}
+
 }

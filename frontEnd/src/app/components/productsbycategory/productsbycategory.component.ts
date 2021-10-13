@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 import { Product } from 'src/app/service/products/product';
 import { ProductsService } from 'src/app/service/products/products.service';
 
@@ -11,7 +12,8 @@ import { ProductsService } from 'src/app/service/products/products.service';
 export class ProductsbycategoryComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private rout: ActivatedRoute, private prodService: ProductsService) { }
+  constructor(private rout: ActivatedRoute,
+    private prodService: ProductsService) { }
 
   ngOnInit(): void {
     this.getProductsByID();
