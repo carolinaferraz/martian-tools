@@ -1,0 +1,85 @@
+<div mat-dialog-container>
+	<h2 class="modalTitle">Please Comment</h2>
+	<form #commentForm="ngForm" (ngSubmit)="submitCommentForm(commentForm.value)" novalidate>
+		<div class="modalContent" mat-dialog-content>
+			<div>
+				<textarea matInput required id="newComment" placeholder="Your comment..." rows="5" cols="32"></textarea>
+			</div>
+		</div>
+		<div class="modalActions">
+			<div>
+				<input class="btn cancelButton" [mat-dialog-close]="true" value="Cancel">
+			</div>
+			<div>
+				<input class="btn submitButton" [mat-dialog-close]="true" type="submit" value="Submit" required>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--
+<div mat-dialog-container>
+	<h2 class="modalTitle">Please Comment</h2>
+	<div *ngIf="error">
+		<p class="error">{{error}}</p>
+	</div>
+	<form>
+		<div class="modalContent" mat-dialog-content>
+			<div>
+				<textarea id=comment name="comment" placeholder="Your comment..." rows="5" cols="32" required></textarea>
+			</div>
+		</div>
+		<div class="modalActions">
+			<div>
+				<input class="btn cancelButton" [mat-dialog-close]="true" value="Cancel">
+			</div>
+		</div>
+	</form>
+</div>
+-->
+
+<!--
+<div mat-dialog-container>
+	<h2 class="modalTitle">Please Comment</h2>
+	<div *ngIf="error">
+		<p class="error">{{error}}</p>
+	</div>
+	<form #commentForm="ngForm">
+		<div class="modalContent">
+			<div>
+				<textarea id=comment name="comment" [(ngModel)]="comment.comment" placeholder="Your comment..." rows="5" cols="32" required></textarea>
+			</div>
+		</div>
+		<div class="modalActions">
+			<div>
+				<input class="btn cancelButton" [mat-dialog-close]="true" value="Cancel">
+			</div>
+			<div>
+				<input class="btn submitButton" [mat-dialog-close]="true" type="submit" value="Submit" required>
+				<input class="btn submitButton" type="submit" value="submit" id="submit" (click)="submitModalForm()" [disabled]="!commentForm.valid">
+			</div>
+		</div>
+	</form>
+</div>
+-->   
+
+<!--
+<div mat-dialog-container>
+	<h2 class="modalTitle">Please Comment</h2>
+	<form #commentForm="ngForm" (ngSubmit)="submitModalForm(commentForm.value)">
+		<div class="modalContent" mat-dialog-content>
+			<div>
+				<textarea id="newComment" placeholder="Your comment..." rows="5" cols="32" required></textarea>
+			</div>
+		</div>
+		<div class="modalActions">
+			<div>
+				<input class="btn cancelButton" [mat-dialog-close]="true" value="Cancel">
+			</div>
+			<div>
+				<input class="btn submitButton" [mat-dialog-close]="true" type="submit" value="Submit" required>
+			</div>
+		</div>
+	</form>
+</div>
+-->

@@ -11,6 +11,11 @@
 
 }
 
+/* required for @angular/material/dialog */
+.cdk-overlay-container {
+  z-index: 9999 !important;
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
 
@@ -43,25 +48,6 @@ img {
   width: 100%;
   max-width: 200px;
 }
-
-/* nav Bar */
-/*
-app-navbar {
-  width: 100%;
-  height: 68px;
-  background-color: var(--medium-orange);
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-app-navbar h1 {
-  color: var(--gray);
-  margin: 0;
-}
-*/
 
 /* Input */
 

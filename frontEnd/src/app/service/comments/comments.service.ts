@@ -14,11 +14,19 @@ export class CommentsService {
 	constructor(private http: HttpClient, private router:Router) { }
 
 	getAllComments(): Observable<Comment[]> {
-    console.log("CommentsService > getAllComments +++++++++++++++++++++");
+		console.log("CommentsService > getAllComments +++++++++++++++++++++");
 		return this.http.get<Comment[]>(this.url)
 		.pipe(
 			catchError(this.handleError<Comment[]>('getAllComments', []))
 		);
+	}
+
+	postNewComment(comment: Comment):Observable<Comment> {
+		console.log("CommentsService > postNewComment +++++++");
+		return this.http.post<Comment>("http://localhost:8080/SpringCore/comments/usercomment", comment)
+			.pipe(
+				catchError(this.handleError('postNewComment', comment))
+			);
 	}
 
 	private handleError<T>(operation = 'operation', result?: T) {
