@@ -1,0 +1,18 @@
+<div mat-dialog-container>
+	<h2 class="modalTitle">Please Comment</h2>
+	<form #commentForm="ngForm" (ngSubmit)="submitCommentForm(commentForm.value)" novalidate>
+		<div class="modalContent" mat-dialog-content>
+			<div>
+				<textarea matInput required id="newComment" placeholder="Your comment..." rows="5" cols="32"></textarea>
+			</div>
+		</div>
+		<div class="modalActions">
+			<div>
+				<input class="btn cancelButton" [mat-dialog-close]="true" value="Cancel">
+			</div>
+			<div>
+				<input class="btn submitButton" [mat-dialog-close]="true" type="submit" value="Submit" required>
+			</div>
+		</div>
+	</form>
+</div>

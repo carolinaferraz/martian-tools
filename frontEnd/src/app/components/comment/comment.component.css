@@ -1,0 +1,50 @@
+.modalTitle {
+	text-align: center;
+	font-size: 24px;
+}
+
+.modalActions {
+	display: flex;
+	justify-content: space-around;
+}
+
+.modalContent {
+	text-align: center;
+	padding: 10px 0px 24px 0px;
+	font-size: 16px;
+}
+
+textarea {
+	resize: none;
+	font-size: 16px;
+  color: #000;
+}
+
+.btn {
+	height: 36px;
+	border-radius: 8px;
+	color: #fff;
+	border: none;
+	font-size: 16px;
+	padding: 8px 8px;
+	cursor: pointer;
+}
+
+.cancelButton {
+	background: #ddd;
+	color: #000;
+}
+
+.submitButton {
+	background: #2da44e;
+}
+
+::ng-deep .mat-dialog-content {
+	overflow-y: hidden !important;
+}
+
+::ng-deep .mat-dialog-container {
+	background: #e77d11;
+	border-radius: 8px;
+}
+

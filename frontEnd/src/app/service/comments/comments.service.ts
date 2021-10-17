@@ -21,6 +21,13 @@ export class CommentsService {
 		);
 	}
 
+  postNewComment(comment: Comment):Observable<Comment> {
+    return this.http.post<Comment>("http://localhost:8080/SpringCore/comments/usercomment", comment)
+      .pipe(
+        catchError(this.handleError('postNewComment', comment))
+      );
+  }
+
 	private handleError<T>(operation = 'operation', result?: T) {
 		return (error: any): Observable<T> => {
 
